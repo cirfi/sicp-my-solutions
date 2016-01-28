@@ -38,6 +38,7 @@
 ;;; fib(n) = (phi^(n-2) * (phi + 1) - psi^(n-2) * (psi + 1)) / (sqrt 5)
 ;;; (phi^n - psi^n) / (sqrt 5) = (phi^(n-2) * phi^2 - psi^(n-2) * psi^2) / (sqrt 5)
 ;;; coz phi^2 = phi + 1, psi^2 = psi + 1
+;;; so (phi^n - psi^n) / (sqrt 5) = (phi^(n-2) * (phi + 1) - psi^(n-2) * (psi + 1)) / (sqrt 5)
 ;;; so fib(n) = (phi^n - psi^n) / (sqrt 5)
 
 ;;; phi^n / (sqrt 5) = fib(n) + psi^n / (sqrt 5)
