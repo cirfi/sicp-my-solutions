@@ -1,7 +1,7 @@
 (define (square x)
   (* x x))
 (define (another-expmod base exp m)
-  (define (trivial-sqrt? x squaremod)
+  (define (nontrivial-sqrt? x squaremod)
     (cond ((= x 1) #f)
 	  ((= x (- m 1)) #f)
 	  (else (= squaremod 1))))
@@ -10,7 +10,7 @@
 	((even? exp)
 	 (let ((x (another-expmod base (/ exp 2) m)))
 	   (let ((squaremod (remainder (square x) m)))
-	     (cond ((trivial-sqrt? x squaremod) 0)
+	     (cond ((nontrivial-sqrt? x squaremod) 0)
 		   (else squaremod)))))
 	(else
 	 (remainder (* base (another-expmod base (- exp 1) m))
