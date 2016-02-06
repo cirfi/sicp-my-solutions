@@ -1,0 +1,17 @@
+(define (cont-frac n d k)
+  (define (cont-frac-recur i)
+    (cond ((>= i k) (/ (n k)
+		       (d k)))
+	  (else (/ (n i)
+		   (+ (d i)
+		      (cont-frac-recur (+ i 1)))))))
+  (cont-frac-recur 1))
+
+(define (tan-cf x k)
+  (cont-frac (lambda (i)
+	       (cond ((= i 1) x)
+		     (else (- (* x x)))))
+	     (lambda (i)
+	       (- (* 2 i) 1))
+	     k))
+  
